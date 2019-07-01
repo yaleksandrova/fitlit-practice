@@ -6,7 +6,7 @@ class UserRepository {
 
   findUserData (userId) {
   const specificUser = this.data.find(function(user) {
-  return user.id === userId;
+    return user.id === userId;
   });
   return specificUser;
   };
@@ -15,15 +15,13 @@ class UserRepository {
   const steps = [];
   this.data.forEach(function(user) {
     steps.push(user.dailyStepGoal);
-});
+  });
 
   const sum = steps.reduce((currentSum, currentValue) => currentSum + currentValue);
   const avgDailyStep = sum / this.data.length;
     return avgDailyStep;
   }
-
 }
-
 
 if (typeof module !== 'undefined') {
   module.exports = UserRepository;
