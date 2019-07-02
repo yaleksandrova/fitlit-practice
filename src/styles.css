@@ -1,0 +1,40 @@
+/*GENERAL*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+  "nav nav"
+  "sidebar output"
+  "sidebar output";
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 7fr;
+  height: 100vh;
+}
+
+nav {
+  background-color: blue;
+  grid-area: nav;
+  height: 100px;
+}
+
+header {
+  background-color: red;
+  grid-area: sidebar;
+}
+
+output {
+  display: grid;  
+  grid-gap: 5px;  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  background-color: green;
+  grid-area: output;
+}
+
+div {
+
+}
