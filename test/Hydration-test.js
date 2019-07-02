@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Hydration = require('../src/Hydration');
-// const sampleDataUsers = require('../data/sampleDataUsers');
 const hydrationData = require('../data/hydration');
 
 describe('Hydration', function() {
@@ -17,5 +16,9 @@ describe('Hydration', function() {
     expect(hydration).to.be.an.instanceof(Hydration);
   })
 
-  
+  it('should calculate average fluid per day for a user', function() {
+    const hydration = new Hydration(hydrationData);
+    expect(hydration.avgFluidPerDay(1)).to.equal()
+
+  })
 });
