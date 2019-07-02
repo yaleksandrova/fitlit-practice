@@ -16,8 +16,8 @@ avgFluidPerDay(id) {
    return Math.round(avgDailyOunces);
 }
 
-  numOfOuncesPerDay () {
-
+  returnOuncesByDate(specificDate) {
+    
   }
 
   numOfOuncesPerWeek () {
