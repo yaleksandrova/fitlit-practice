@@ -1,10 +1,16 @@
 class User {
-  constructor(userData) {
-    this.userData = userData;
+  constructor(obj) {
+    this.id = obj.id;
+    this.name = obj.name;
+    this.address = obj.address;
+    this.email = obj.email;
+    this.strideLength = obj.strideLength;
+    this.dailyStepGoal = obj.dailyStepGoal;
+    this.friends = obj.friends;
   }
 
   returnFirstName() {
-  let firstName = this.userData['name'].split(' ').splice(0, 1).toString();
+  let firstName = this.name.split(' ').splice(0, 1).toString();
   return firstName;
   }
 }

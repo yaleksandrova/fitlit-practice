@@ -1,4 +1,3 @@
-// const users = require('../src/users');
 class UserRepository {
   constructor (data) {
     this.data = data;
