@@ -13,7 +13,7 @@ avgFluidPerDay(id) {
      return currentSum
    }, 0);
    const avgDailyOunces = sum / targetUserData.length
-   return avgDailyOunces;
+   return Math.round(avgDailyOunces);
 }
 
   numOfOuncesPerDay () {
