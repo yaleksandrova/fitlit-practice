@@ -5,18 +5,21 @@ class Hydration {
   }
 
 avgFluidPerDay(id) {
-   const targetUserData = this.hydrationData.filter(function(item){
-     return item.userID === id;
-   });
-   const sum = targetUserData.reduce(function(currentSum, currentValue){
-     currentSum += currentValue.numOunces;
-     return currentSum
+  const targetUserData = this.hydrationData.filter(function(item){
+    return item.userID === id;
+  });
+  const sum = targetUserData.reduce(function(currentSum, currentValue){
+    currentSum += currentValue.numOunces;
+    return currentSum
    }, 0);
    const avgDailyOunces = sum / targetUserData.length
    return Math.round(avgDailyOunces);
 }
 
-  returnOuncesByDate(specificDate) {
+  returnOuncesByDate(specificDate, id) {
+    const targetUserData = this.hydrationData.filter(function(item){
+      return item.userID === id;
+    });
     
   }
 
