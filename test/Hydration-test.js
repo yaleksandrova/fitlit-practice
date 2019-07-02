@@ -17,7 +17,13 @@ describe('Hydration', function() {
   })
 
   it('should calculate average fluid per day for a user', function() {
+    const hydration = new Hydration([sampleHydrationData[11], sampleHydrationData[12], sampleHydrationData[13]]);
+    expect(hydration.avgFluidPerDay()).to.equal(62)
+  })
+
+  it('should return how many fluid ounces a user consumed in a specific day', function() {
     const hydration = new Hydration(sampleHydrationData);
-    expect(hydration.avgFluidPerDay(7)).to.equal(62)
+    expect(hydration.returnOuncesByDate('2019/06/18')).to.equal(85)
+
   })
 });
