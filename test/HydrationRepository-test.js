@@ -20,5 +20,5 @@ describe('HydrationRepository', function() {
   it('should find user data given users id', function () {
     const hydration = new HydrationRepository(sampleDataHydration);
     expect(hydration.findUserData(7).length).to.equal(3);
-  })
-});
+  });
+})

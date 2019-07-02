@@ -10,7 +10,7 @@ class HydrationRepository {
       return item.userID === id;
     });
     return targetUserData;
-    const newUser = new Hydration(targetUserData)
+    const newUser = new Hydration(targetUserData);
   }
 }
 
