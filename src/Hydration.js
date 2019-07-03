@@ -2,7 +2,7 @@ class Hydration {
   constructor (userData) {
     this.userData = userData;
   }
-  
+
   avgFluidPerDay() {
     const sum = this.userData.reduce(function(currentSum, currentValue){
       currentSum += currentValue.numOunces;
