@@ -35,11 +35,24 @@ class Sleep {
     return targetElement.sleepQuality;
   }
 
-  hrsSleptOverWeek() {
-
+  returnSleptByWeek(specificDate) {
+    let index = this.findIndexOfSpecificDate(specificDate);
+    let data = [...this.sleepData];
+    let sleepPastWeek = data.splice(index - 7, index + 1);
+    let hours = sleepPastWeek.map(function(day){
+      return day.hoursSlept;
+    })
+    return hours.reverse();
   }
-  sleepQltOverWeek () {
-    
+
+  findIndexOfSpecificDate(specificDate) {
+    return this.sleepData.findIndex(function(item) {
+      return item.date === specificDate;
+    });
+  };
+
+  returnSleepQltByWeek (specificDate) {
+
   }
 
 }
