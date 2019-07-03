@@ -12,7 +12,21 @@ class SleepRepository {
     return targetUserData;
     const newUser = new Sleep(targetUserData)
   }
+
+  avgSleepQltForAllUsers () {
+    const sum = this.sleepData.reduce(function(currentSum, currentValue){
+      currentSum += currentValue.sleepQuality;
+      return currentSum;
+  }, 0);
+    const avgQltSleep = sum / this.sleepData.length;
+      return Math.round(avgQltSleep);
+  }
+  
+  usersWithAvgSleepQualityMoreThanThree () {
+
+  }
 }
+
 
 if (typeof module !== 'undefined') {
   module.exports = SleepRepository;
