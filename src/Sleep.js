@@ -54,6 +54,17 @@ class Sleep {
   returnSleepQltByWeek (specificDate) {
 
   }
+  avgSleepQltForAllUsers () {
+
+  }
+
+  usersWithAvgSleepQualityMoreThanThree () {
+
+  }
+  usersWithLotsOfSleep () {
+
+  }
+
 
 }
 
