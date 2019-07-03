@@ -3,7 +3,15 @@ class Activity {
     this.activityData = activityData;
   }
 
+  calculateMilesWalked() {
 
+  }
+
+
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = Activity;
 }
 
 
