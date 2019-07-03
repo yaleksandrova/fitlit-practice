@@ -52,17 +52,17 @@ class Sleep {
   };
 
   returnSleepQltByWeek (specificDate) {
-
+    let index = this.findIndexOfSpecificDate(specificDate);
+    let data = [...this.sleepData];
+    let sleepQltPastWeek = data.splice(index - 7, index + 1);
+    let hours = sleepQltPastWeek.map(function(day){
+      return day.sleepQuality;
+    })
+    return hours.reverse();
   }
-  avgSleepQltForAllUsers () {
-
-  }
-
-  usersWithAvgSleepQualityMoreThanThree () {
-
-  }
+  
   usersWithLotsOfSleep () {
-
+    
   }
 
 
