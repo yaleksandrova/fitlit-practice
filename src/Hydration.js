@@ -25,7 +25,7 @@ class Hydration {
     let userPastWeek = data.splice(index - 7, index);
     let ounces = userPastWeek.map(function(day){
       return day.numOunces;
-    }),
+    });
     return ounces.reverse();
   }
 
