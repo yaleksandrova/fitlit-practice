@@ -7,9 +7,9 @@ class Hydration {
     const sum = this.userData.reduce(function(currentSum, currentValue){
       currentSum += currentValue.numOunces;
       return currentSum;
-   }, 0);
-   const avgDailyOunces = sum / this.userData.length;
-   return Math.round(avgDailyOunces);
+  }, 0);
+  const avgDailyOunces = sum / this.userData.length;
+  return Math.round(avgDailyOunces);
   }
 
   returnOuncesByDate(specificDate) {
