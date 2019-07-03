@@ -2,7 +2,7 @@ class Hydration {
   constructor (userData) {
     this.userData = userData;
   }
-  
+
   avgFluidPerDay() {
     const sum = this.userData.reduce(function(currentSum, currentValue){
       currentSum += currentValue.numOunces;
@@ -25,7 +25,7 @@ class Hydration {
     let userPastWeek = data.splice(index - 7, index);
     let ounces = userPastWeek.map(function(day){
       return day.numOunces;
-    }),
+    })
     return ounces.reverse();
   }
 
