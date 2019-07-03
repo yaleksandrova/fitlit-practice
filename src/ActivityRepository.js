@@ -1,6 +1,6 @@
-const Hydration = require('../src/Hydration');
+const Activity = require('../src/Activity');
 
-class HydrationRepository {
+class ActivityRepository {
   constructor(data) {
     this.data = data;
   }
@@ -10,10 +10,10 @@ class HydrationRepository {
       return item.userID === id;
     });
     return targetUserData;
-    const newUser = new Hydration(targetUserData);
+    const newUser = new Activity(targetUserData);
   }
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = HydrationRepository;
+  module.exports = ActivityRepository;
 }

@@ -93,7 +93,7 @@ const sampleDataHydration = [
     "userID": 16,
     "date": "2019/06/16",
     "numOunces": 21
-  },
+  }
 ]
 
 module.exports = sampleDataHydration;
