@@ -2,7 +2,9 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const SleepRepository = require('../src/SleepRepository');
-const sampleDataSleep = require('../data/sampleDataSleep');
+const sampleDataSleep = require('../data/sampleDataFilteredSleep');
+const sampleSleep = require('../data/sampleDataSleep');
+
 
 
 describe('SleepRepository', function() {
@@ -19,16 +21,11 @@ describe('SleepRepository', function() {
 
   it('should find user data given users id', function () {
     const sleep = new SleepRepository(sampleDataSleep);
-    expect(sleep.findUserData(3)).to.deep.equal([{
-      "userID": 3,
-      "date": "2019/06/29",
-      "hoursSlept": 6.6,
-      "sleepQuality": 4
-    }]);
-  })
+    expect(sleep.findUserData(1).length).to.equal(8);
+  });
 
-  it('should calculate average sleep quaity for all users', function () {
-    const sleep = new SleepRepository(sampleDataSleep);
-    expect(sleep.avgSleepQltForAllUsers()).to.equal(3)
+  it('should calculate average sleep quaity for each user', function () {
+    const sleep = new SleepRepository(sampleSleep);
+    expect(sleep.avgSleepQltForEachUser()).to.equal(3)
   })
 });
