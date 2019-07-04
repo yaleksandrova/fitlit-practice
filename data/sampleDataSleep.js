@@ -100,6 +100,54 @@ const sampleDataSleep = [
   "date": "2019/06/29",
   "hoursSlept": 6.6,
   "sleepQuality": 4
+},
+{
+  "userID": 4,
+  "date": "2019/06/29",
+  "hoursSlept": 5.2,
+  "sleepQuality": 4.6
+},
+{
+  "userID": 4,
+  "date": "2019/06/30",
+  "hoursSlept": 4.9,
+  "sleepQuality": 2.9
+},
+{
+  "userID": 4,
+  "date": "2019/07/01",
+  "hoursSlept": 4.3,
+  "sleepQuality": 3
+},
+{
+  "userID": 4,
+  "date": "2019/07/02",
+  "hoursSlept": 8.8,
+  "sleepQuality": 3
+},
+{
+  "userID": 4,
+  "date": "2019/07/03",
+  "hoursSlept": 11,
+  "sleepQuality": 4.4
+},
+{
+  "userID": 4,
+  "date": "2019/07/04",
+  "hoursSlept": 5.5,
+  "sleepQuality": 4.7
+},
+{
+  "userID": 4,
+  "date": "2019/07/05",
+  "hoursSlept": 5.3,
+  "sleepQuality": 4.1
+},
+{
+  "userID": 4,
+  "date": "2019/07/06",
+  "hoursSlept": 7.6,
+  "sleepQuality": 4
 }
   ]
 
