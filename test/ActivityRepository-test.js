@@ -18,7 +18,7 @@ describe('ActivityRepository', function() {
   }); 
 
   it('should find user data given users id', function () {
-    const activity = new ActivityRepository(sampleDataActivity);
-    expect(activity.findUserData(7).length).to.equal(3);
+    const activityRepo = new ActivityRepository(sampleDataActivity);
+    expect(activityRepo.findUserData(7).length).to.equal(3);
   });
 })

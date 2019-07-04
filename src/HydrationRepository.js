@@ -9,8 +9,13 @@ class HydrationRepository {
     const targetUserData = this.data.filter(function(item){
       return item.userID === id;
     });
-    return targetUserData;
+    // return targetUserData;
     const newUser = new Hydration(targetUserData);
+    return newUser.userData;
+    // const userInfo {
+    //   user: newUser,
+    //   userData: targetUserData
+    // }
   }
 }
 

@@ -46,7 +46,7 @@ describe('Sleep', function() {
     expect(sleep.returnSleptByWeek('2019/06/22')).to.deep.equal([7, 7.8, 9.3, 10.7, 10.4, 8, 4.1, 6.1]);
   });
 
-  it('should return slept quality on a specific date and 7 days prior', function() {
+  it.skip('should return slept quality on a specific date and 7 days prior', function() {
     const sleep = new Sleep(sampleDataSleep);
     expect(sleep.returnSleepQltByWeek('2019/06/22')).to.deep.equal([3, 4.2, 1.2, 1.2, 3.1, 2.6, 3.8, 2.2]);
   });
