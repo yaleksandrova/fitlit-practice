@@ -11,7 +11,7 @@ class HydrationRepository {
     });
     // return targetUserData;
     const newUser = new Hydration(targetUserData);
-    return newUser;
+    return newUser.userData;
     // const userInfo {
     //   user: newUser,
     //   userData: targetUserData

@@ -6,11 +6,9 @@ class ActivityRepository {
   }
 
   findUserData(id) {
-    const targetUserData = this.data.filter(function(item){
-      return item.userID === id;
-    });
-    return targetUserData;
+    const targetUserData = this.data.filter(item => item.userID === id);
     const newUser = new Activity(targetUserData);
+    return newUser.activityData;
   }
 }
 
