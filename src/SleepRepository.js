@@ -13,15 +13,16 @@ class SleepRepository {
     const newUser = new Sleep(targetUserData)
   }
 
-  avgSleepQltForAllUsers () {
+  avgSleepQltForAllUsersIndv () {
+    
     const sum = this.sleepData.reduce(function(currentSum, currentValue){
       currentSum += currentValue.sleepQuality;
       return currentSum;
   }, 0);
-    const avgQltSleep = sum / this.sleepData.length;
+    const avgQltSleep = sum / this.sleepData/;
       return Math.round(avgQltSleep);
   }
-  
+
   usersWithAvgSleepQualityMoreThanThree () {
 
   }

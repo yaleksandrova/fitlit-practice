@@ -51,5 +51,7 @@ describe('Sleep', function() {
     expect(sleep.returnSleepQltByWeek('2019/06/22')).to.deep.equal([3, 4.2, 1.2, 1.2, 3.1, 2.6, 3.8, 2.2]);
   });
 
+  // user 1 =2.5, user 2 = 2.9, user 4 = 3.3
+
 
 });
