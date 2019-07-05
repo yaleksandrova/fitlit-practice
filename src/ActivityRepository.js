@@ -10,6 +10,15 @@ class ActivityRepository {
     const newUser = new Activity(targetUserData);
     return newUser.activityData;
   }
+
+  findAvgActivityByDate(date, category) {
+    let filteredDateData = this.data.filter(obj => obj.date === date);
+    let avgForActivity = filteredDateData.reduce((total, current) => {
+      total += current[category];
+      return total
+    }, 0)
+    return Math.round(avgForActivity / filteredDateData.length);
+  }
 }
 
 if (typeof module !== 'undefined') {

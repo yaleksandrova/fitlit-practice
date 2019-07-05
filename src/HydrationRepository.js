@@ -6,16 +6,9 @@ class HydrationRepository {
   }
 
   findUserData(id) {
-    const targetUserData = this.data.filter(function(item){
-      return item.userID === id;
-    });
-    // return targetUserData;
+    const targetUserData = this.data.filter(item => item.userID === id);
     const newUser = new Hydration(targetUserData);
     return newUser.userData;
-    // const userInfo {
-    //   user: newUser,
-    //   userData: targetUserData
-    // }
   }
 }
 
