@@ -4,20 +4,25 @@ const expect = chai.expect;
 const ActivityRepository = require('../src/ActivityRepository');
 const sampleDataActivity = require('../data/sampleDataActivity');
 
+// let activityRepo,
 
-describe('ActivityRepository', function() {
+// beforeEach(() => {
+//   activityRepo = new ActivityRepository(sampleDataActivity);
+// });
 
-  it('should be a function', function() {
-    const activity = new ActivityRepository(sampleDataActivity);
+describe('ActivityRepository', () => {
+
+  it('should be a function', () => {
+    const activityRepo = new ActivityRepository(sampleDataActivity);
     expect(ActivityRepository).to.be.a('function');
   });
 
-  it('should be an instance of HydrationRepository', function() {
-    const activity = new ActivityRepository(sampleDataActivity);
-    expect(activity).to.be.an.instanceof(ActivityRepository);
+  it('should be an instance of HydrationRepository', () => {
+    const activityRepo = new ActivityRepository(sampleDataActivity);
+    expect(activityRepo).to.be.an.instanceof(ActivityRepository);
   }); 
 
-  it('should find user data given users id', function () {
+  it('should find user data given users id', () => {
     const activityRepo = new ActivityRepository(sampleDataActivity);
     expect(activityRepo.findUserData(7).length).to.equal(3);
   });

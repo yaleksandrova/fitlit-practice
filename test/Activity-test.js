@@ -6,34 +6,34 @@ const sampleDataActivity = require('../data/sampleDataActivity');
 const sampleDataUsers = require('../data/sampleDataUsers');
 
 
-describe('Activity', function() {
+describe('Activity', () => {
 
-  it('should be a function', function() {
+  it('should be a function', () => {
     const activity = new Activity(sampleDataActivity);
     expect(Activity).to.be.a('function');
   });
 
-  it('should be an instance of Activity', function() {
+  it('should be an instance of Activity', () => {
     const activity = new Activity(sampleDataActivity);
     expect(activity).to.be.an.instanceof(Activity);
   }); 
 
-  it('should calculate distance walk in miles specified by a date', function () {
+  it('should calculate distance walk in miles specified by a date', () => {
     const activity = new Activity(sampleDataActivity);
     expect(activity.calculateMilesWalked('2019/06/15')).to.equal(2.91);
   });
 
-  it('should return a user\'s active active minutes on a specific day', function() {
+  it('should return a user\'s active active minutes on a specific day', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[10]]);
     expect(activity.returnMinutesOfActivity('2019/06/15')).to.equal(140);
   });
 
-  it('should return a user\'s average activity for a week', function() {
+  it('should return a user\'s average activity for a week', () => {
     const activity = new Activity(sampleDataActivity);
 
   })
 
-  it('should return check if they reach their step goal on a given day', function() {
+  it('should return check if they reach their step goal on a given day', () => {
     const activity = new Activity(sampleDataActivity);
     expect(activity.reachStepGoal('2019/06/15')).to.equal('Keep stepping! You missed your goal by 6423 steps!');
   })

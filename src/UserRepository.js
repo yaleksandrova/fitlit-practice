@@ -12,9 +12,7 @@ class UserRepository {
 
   avgStepGoal () {
     const steps = [];
-    this.data.forEach(function(user) {
-      steps.push(user.dailyStepGoal);
-    });
+    this.data.forEach(user => steps.push(user.dailyStepGoal));
 
     const sum = steps.reduce((currentSum, currentValue) => currentSum + currentValue);
     const avgDailyStep = sum / this.data.length;
