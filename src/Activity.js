@@ -40,7 +40,7 @@ class Activity {
   exceedStepGoalDays() {
     let targetUserGoal = userData.find(obj => obj.id === this.activityData[0].userID).dailyStepGoal;
     let exceededGoalDays = this.activityData.filter(function(obj) {
-       return obj.numSteps > targetUserGoal
+      return obj.numSteps > targetUserGoal
     });
     return exceededGoalDays.map(obj => obj.date)
   }

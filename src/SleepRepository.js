@@ -1,4 +1,5 @@
 const Sleep = require('../src/Sleep');
+const data = require('../data/sampleDataSleep')
 
 class SleepRepository {
   constructor (sleepData) {
@@ -13,50 +14,48 @@ class SleepRepository {
     const newUser = new Sleep(targetUserData)
   }
 
-  avgSleepQltForEachUser () {
-    let obj = {};
-  console.log(this.sleepData);
-    for(var i = 1; i < this.sleepData.length; i++){
-      const arrayforSingleUserInfo = this.sleepData.filter(function(item){
-      return item.userID === this.sleepData[i].userID
-    });
-  
+  avgSleepQltForEachUser() {
+  let obj = {};
+
+    data.forEach(function(user){
+    const arrayforSingleUserInfo = data.filter(function(item){
+    return item.userID === user.userID
+    })
+
     let average = (arrayforSingleUserInfo.reduce(function(currentSum, currentValue){
       currentSum += currentValue.sleepQuality;
       return currentSum;
-      }, 0)) / arrayforSingleUserInfo.length; 
+      }, 0)) / arrayforSingleUserInfo.length;
 
-      obj[this.sleepData[i].userID] = average; 
-      }
-      
-      return obj; 
-  }
-  
-  
+      obj[user.userID] = Math.round(average);
+      })
+
+      return obj;
+    }
+
+
   usersWithMostSleepHours(specificDate) {
     let sleepObj = {};
-    let userAverages = {};
-  
-    sampleDataSleep.forEach(userInfo => {
+
+      data.forEach(userInfo => {
       if (userInfo.date === specificDate) {
         sleepObj[userInfo.userID] = userInfo.hoursSlept;
       }
     })
-    
+
     let arr = [];
-     //iterating over the sleepObj 
     for (let user in sleepObj) {
-      arr.push(sleepObj[user]); 
+      arr.push(sleepObj[user]);
     }
-      
+
     arr.sort(function(a,b){
       return b - a
       })
-     //descending order 
-    greatestVal = arr[0]; 
-    const getKeyByVal = () => 
-    Object.keys(sleepObj).find(key => sleepObj[key] === greatestVal);
-    return getKeyByVal(); 
+    let greatestVal = arr[0];
+    const getKeyByVal = () => {
+      return Object.keys(sleepObj).find(key => sleepObj[key] === greatestVal);
+      }
+      return parseInt(getKeyByVal()); 
   }
 
   usersWithAvgSleepQualityMoreThanThree () {
