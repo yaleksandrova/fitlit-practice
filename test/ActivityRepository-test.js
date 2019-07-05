@@ -21,4 +21,19 @@ describe('ActivityRepository', function() {
     const activityRepo = new ActivityRepository(sampleDataActivity);
     expect(activityRepo.findUserData(7).length).to.equal(3);
   });
+
+  it('should return the average stairs climbed for a specific date', () => {
+    const activityRepo = new ActivityRepository(sampleDataActivity);
+    expect(activityRepo.findAvgActivityByDate('2019/06/15', 'flightsOfStairs')).to.equal(24);
+  })
+
+  it('should return the average steps taken for a specific date', () => {
+      const activityRepo = new ActivityRepository(sampleDataActivity);
+      expect(activityRepo.findAvgActivityByDate('2019/06/15', 'numSteps')).to.equal(7576);
+  })
+
+  it('should return the average minutes active for a specific date', () => {
+      const activityRepo = new ActivityRepository(sampleDataActivity);
+      expect(activityRepo.findAvgActivityByDate('2019/06/15', 'minutesActive')).to.equal(143);
+  })
 })
