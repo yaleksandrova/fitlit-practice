@@ -1,6 +1,6 @@
 const currentUserRepo = new UserRepository(userData)
 console.log(currentUserRepo)
-// let user;
+let userObj;
 let hydration;
 // let sleep;
 // let activity;
@@ -11,7 +11,7 @@ let hydration;
 function makeRandomUser() {
   let randomNumber = Math.floor(Math.random() * userData.length)
   let user = currentUserRepo.findUserData(randomNumber);
-  let userObj = new User({...user})
+  userObj = new User({...user})
   populateUserInfo(userObj);
   console.log(userObj)
   getHydrationData(randomNumber);
