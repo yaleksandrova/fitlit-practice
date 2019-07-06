@@ -1,7 +1,8 @@
-console.log(hydration.returnOuncesByWeek('2019/09/22'));
+// console.log(hydration.returnOuncesByWeek('2019/09/22'));
+console.log('person goal', userObj.dailyStepGoal)
+console.log('average goal', currentUserRepo.avgStepGoal())
 
-var hydrationChart = document.getElementById('hydrationChart');
-var myChart = new Chart(hydrationChart, {
+let myChart = new Chart($('#hydrationChart'), {
   type: 'line',
   data: {
     labels: ['Today', 'Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'],
@@ -30,25 +31,24 @@ var myChart = new Chart(hydrationChart, {
       beginAtZero: true
 });
 
-// var dailyStepGoal = document.getElementById('hydrationChart');
-// var stepGoalChart = new Chart(dailyStepGoal, {
-//   type: 'bar',
-//   data: {
-//     labels: ['You', 'The Average'],
-//     datasets: [{
-//       label: 'Step Goal',
-//       data: [user.dailyStepGoal, currentUserRepo.avgStepGoal()],
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.2)',
-//         'rgba(54, 162, 235, 0.2)',
-//       ],
-//       borderColor: [
-//         'rgba(255, 99, 132, 1)',
-//         'rgba(54, 162, 235, 1)',
-//       ],
-//       borderWidth: 1
-//       }]
-//     },
-//       beginAtZero: true
-// });
+let stepGoalChart = new Chart($('#dailyStepGoal'), {
+  type: 'bar',
+  data: {
+    labels: ['Personal Step Goal', 'The Average'],
+    datasets: [{
+      label: 'Step Goal',
+      data: [userObj.dailyStepGoal, currentUserRepo.avgStepGoal()],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+      ],
+      borderWidth: 1
+      }]
+    },
+      beginAtZero: true
+});
 
