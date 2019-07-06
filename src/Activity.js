@@ -14,9 +14,9 @@ class Activity {
     return parseFloat(roundedMiles);
   }
 
-  returnMinutesOfActivity(date) {
+  returnActivityStats(date, category) {
     let targetElement = this.activityData.find(item => item.date === date);
-    return targetElement.minutesActive;
+    return targetElement[category];
   }
 
   reachStepGoal(date) {

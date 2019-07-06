@@ -22,9 +22,9 @@ describe('Activity', () => {
     expect(activity.calculateMilesWalked('2019/06/15')).to.equal(2.91);
   });
 
-  it('should return a user\'s active active minutes on a specific day', () => {
+  it('should return a user\'s active minutes on a specific day', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[10]]);
-    expect(activity.returnMinutesOfActivity('2019/06/15')).to.equal(140);
+    expect(activity.returnActivityStats('2019/06/15', 'minutesActive')).to.equal(140);
   });
 
   it('should return a user\'s average activity for a week', () => {
