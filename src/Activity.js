@@ -1,6 +1,3 @@
-// const UserRepository = require('../src/UserRepository');
-// const userData = require('../data/users.js');
-
 class Activity {
   constructor(activityData, userData) {
     this.activityData = activityData;
@@ -49,6 +46,16 @@ class Activity {
     return Math.max(...stairsSet);
   }
 
+  returnActivityByWeek(date, category) {
+    let index = this.findIndexOfSpecificDate(date);
+    console.log(index)
+    let data = [...this.activityData];
+    let userPastWeek = data.slice(index - 7, index + 1);
+    let activityWeek = userPastWeek.map(day => day[category]);
+    console.log(activityWeek.reverse())
+    return activityWeek;
+  }
+
   findIndexOfSpecificDate(date) {
     return this.activityData.findIndex(item => item.date === date);
   }
@@ -56,8 +63,6 @@ class Activity {
   findTargetElement(date) {
     let targetElement = this.activityData.find(item => item.date === date);
     let user = this.userData.filter(element => element.id === targetElement.userID);
-    // let userRepo = new UserRepository(userData);
-    // let user = userRepo.findUserData(targetElement.userID);
     return { element: targetElement, user: user };
   }
 }

@@ -52,4 +52,9 @@ describe('Activity', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]]);
     expect(activity.findStairsMax()).to.equal(33);
   })
+
+  it('should return activities by the week', () => {
+    const activity = new Activity(sampleDataActivity);
+    expect(activity.returnActivityByWeek('2019/06/24', 'numSteps')).to.deep.equal([8015, 6389, 10333, 2634, 14810, 11374, 3486, 12402]);
+  })
 })

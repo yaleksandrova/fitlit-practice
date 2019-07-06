@@ -12,7 +12,6 @@ body {
   "sidebar output";
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 10fr;
-  height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -97,18 +96,13 @@ h3 {
 /*OUTPUT*/
 
 output {
-  display: grid;  
+  /*display: grid;  */
   /*grid-gap: 5px;  */
   /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
   /*grid-template-rows: repeat(2, 300px);*/
   background-color: #FFFFFF;
   grid-area: output;
   padding: 10px;
-}
-
-.section--hydration {
-  height: 300px;
-  width: 300px;
 }
 
 h4 {
@@ -118,13 +112,34 @@ h4 {
   padding: 10px;
 }
 
+.section--hydration {
+  height: 300px;
+  width: 300px;
+}
+
 .canvas--hydration {
   padding: 10px;
+}
+
+.section--activity {
+  display: flex;
+  height: 300px;
+}
+
+.canvas--activity {
+  padding: 10px;
+  height: 300px;
+  width: 300px;
 }
 
 table, th, td {
   border: 1px solid black;
   padding: 5px;
+}
+
+.output__table {
+  margin-right: 20px;
+  width: 400px;
 }
 
 
