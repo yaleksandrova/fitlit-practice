@@ -1,4 +1,4 @@
-const Hydration = require('../src/Hydration');
+// const Hydration = require('../src/Hydration');
 
 class HydrationRepository {
   constructor(data) {
@@ -7,8 +7,9 @@ class HydrationRepository {
 
   findUserData(id) {
     const targetUserData = this.data.filter(item => item.userID === id);
-    const newUser = new Hydration(targetUserData);
-    return newUser.userData;
+    return targetUserData;
+    // const newUser = new Hydration(targetUserData);
+    // return newUser.userData;
   }
 }
 

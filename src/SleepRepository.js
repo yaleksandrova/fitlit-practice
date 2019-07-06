@@ -1,4 +1,4 @@
-const Sleep = require('../src/Sleep');
+// const Sleep = require('../src/Sleep');
 const data = require('../data/sampleDataSleep')
 
 class SleepRepository {
@@ -11,7 +11,7 @@ class SleepRepository {
       return item.userID === id;
     });
     return targetUserData;
-    const newUser = new Sleep(targetUserData)
+    // const newUser = new Sleep(targetUserData)
   }
 
   avgSleepQltForEachUser() {
@@ -29,7 +29,6 @@ class SleepRepository {
 
       obj[user.userID] = Math.round(average);
       })
-
       return obj;
     }
 

@@ -5,17 +5,18 @@ class UserRepository {
     this.data = data;
   }
 
-  findUserData (userId) {
+  findUserData(userId) {
     const specificUser = this.data.find(user => user.id === userId);
     return specificUser;
   };
 
-  avgStepGoal () {
+  avgStepGoal() {
     const steps = [];
     this.data.forEach(user => steps.push(user.dailyStepGoal));
 
     const sum = steps.reduce((currentSum, currentValue) => currentSum + currentValue);
     const avgDailyStep = sum / this.data.length;
+    console.log(avgDailyStep)
     return avgDailyStep;
   }
 }
