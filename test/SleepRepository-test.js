@@ -33,4 +33,9 @@ describe('SleepRepository', function() {
     const sleep = new SleepRepository();
     expect(sleep.usersWithMostSleepHours("2019/06/18")).to.equal(1)
     });
+
+    it('should find users with over three sleep quality', function () {
+      const sleep = new SleepRepository();
+      expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.equal(2)
+      });
 });
