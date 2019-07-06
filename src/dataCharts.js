@@ -1,4 +1,4 @@
-// console.log(hydration.returnOuncesByWeek('2019/09/22'));
+console.log(hydration.returnOuncesByWeek('2019/09/22'));
 console.log('person goal', userObj.dailyStepGoal)
 console.log('average goal', currentUserRepo.avgStepGoal())
 

@@ -5,7 +5,6 @@ const Activity = require('../src/Activity');
 const sampleDataActivity = require('../data/sampleDataActivity');
 const sampleDataUsers = require('../data/sampleDataUsers');
 
-
 describe('Activity', () => {
 
   it('should be a function', () => {
@@ -19,7 +18,7 @@ describe('Activity', () => {
   }); 
 
   it('should calculate distance walk in miles specified by a date', () => {
-    const activity = new Activity(sampleDataActivity);
+    const activity = new Activity(sampleDataActivity, sampleDataUsers);
     expect(activity.calculateMilesWalked('2019/06/15')).to.equal(2.91);
   });
 
@@ -34,7 +33,7 @@ describe('Activity', () => {
   })
 
   it('should return check if they reach their step goal on a given day', () => {
-    const activity = new Activity(sampleDataActivity);
+    const activity = new Activity(sampleDataActivity, sampleDataUsers);
     expect(activity.reachStepGoal('2019/06/15')).to.equal('Keep stepping! You missed your goal by 6423 steps!');
   })
 
@@ -44,7 +43,7 @@ describe('Activity', () => {
   })
 
   it('should return all the days a user exceeded their step goal', () => {
-    const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]]);
+    const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]], sampleDataUsers);
     expect(activity.exceedStepGoalDays()).to.deep.equal(['2019/06/17']);
 
   })
