@@ -11,18 +11,86 @@ body {
   "sidebar output"
   "sidebar output";
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 7fr;
+  grid-template-rows: 1fr 10fr;
   height: 100vh;
+  font-family: 'Open Sans', sans-serif;
 }
+
+/*NAV*/
 
 nav {
-  background-color: #4056A1;
+  background-color: #557A95;
   grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.nav__article {
+  display: flex;
+}
+
+.nav__h1 {
+  font-weight: 800;
+}
+
+.nav__img {
+  height: 50px;
+  margin-top: 45px;
+}
+
+
+h2 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+#header__h2--name {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+/*HEADER*/
+
 header {
-  background-color: #F13C20;
+  background-color: #B0B0B0;
   grid-area: sidebar;
+  padding: 10px;
+}
+
+ul {
+  padding-inline-start: 0px
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header__li {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.header__h3 {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 output {
@@ -30,10 +98,14 @@ output {
   grid-gap: 5px;  
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(2, 300px);
-  background-color: #EFE2BA;
+  background-color: #5D5C61;
   grid-area: output;
 }
 
-div {
-  background-color: #C5CBE3;
+section {
+  background-color: #B1A296;
+}
+
+canvas {
+  padding: 5px 35px 65px 35px;
 }
