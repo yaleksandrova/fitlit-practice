@@ -57,9 +57,58 @@ class SleepRepository {
       return parseInt(getKeyByVal()); 
   }
 
-  usersWithAvgSleepQualityMoreThanThree () {
+  usersWithOverThreeSleepQuality(date){
+    var arrayOfObjects = sampleDataSleep; 
+    let obj = {}; 
 
+    arrayOfObjects.forEach(function(user){
+    const index = arrayOfObjects.findIndex(function(item) {
+      return item.date === date;
+    });
+
+    let data = [...arrayOfObjects];
+    let sleepPastWeek = data.splice(index - 8, index + 1);
+    let arrayforSingleUserInfo = sleepPastWeek.map(function(day){
+      return day.sleepQuality;
+    })
+
+    console.log(`For the past week for this specific date, user ${user.userID} had this quality of sleep: ${arrayforSingleUserInfo}`); 
+    console.log("---------------")
+
+    average = (arrayforSingleUserInfo.reduce(function(currentSum, currentValue){
+    currentSum += currentValue;
+      return currentSum;
+    }, 0)) / arrayforSingleUserInfo.length; 
+
+    console.log("The average sleep quality for user " + user.userID + " is " + average); 
+    console.log("---------------")
+    obj[user.userID] = average;
+    
+  
+    arrayOfObjects.splice(0, index+1); 
+     //start at position 0 and get rid of 9
+    })
+
+    console.log(obj); 
+
+    let arr = []; 
+    for(let user in obj){
+      if(obj[user] > 3){
+        arr.push(parseInt(user));
+    }
+    }
+
+    if(arr.length > 1){
+      console.log(`There are multiple users who averaged a sleep quality greater than 3 for this week: ${arr}`); 
+    } else {
+    console.log(`The user with an ID of ${arr[0]} has an average greater than 3`); 
+    }
+
+      return arr; 
   }
+
+  // usersWithOverThreeSleepQuality('2019/06/22');
+
 }
 
 
