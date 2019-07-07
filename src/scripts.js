@@ -45,7 +45,7 @@ function getActivityData(randomNumber) {
 }
 
 function createActivityTable() {
-  $('#section--activity').prepend(`
+  $('#section--activity--table').prepend(`
     <table class="output__table">
       <tr>
         <th>Category</th>

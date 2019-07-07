@@ -96,13 +96,19 @@ h3 {
 /*OUTPUT*/
 
 output {
-  /*display: grid;  */
-  /*grid-gap: 5px;  */
-  /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-  /*grid-template-rows: repeat(2, 300px);*/
   background-color: #FFFFFF;
   grid-area: output;
-  padding: 10px;
+  display: flex;
+  padding-top: 10px;
+}
+
+.article--column1 {
+  width: 50%;
+  border-right: #557A95 2px solid;
+}
+
+.article--column2 {
+  width: 50%;
 }
 
 h4 {
@@ -110,36 +116,54 @@ h4 {
   margin-block-start: 0px;
   margin-block-end: 0px;
   padding: 10px;
+/*  color: black;
+  text-shadow: -1px 0 #557A95, 0 1px #557A95, 1px 0 #557A95, 0 -1px #557A95;*/
 }
 
 .section--hydration {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  padding: 5px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  min-width: 400px;
 }
 
 .canvas--hydration {
-  padding: 10px;
 }
 
-.section--activity {
+.section--activity--table {
   display: flex;
-  height: 300px;
+}
+
+.section--activity--charts {
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+  min-height: 200px;
+  min-width: 400px;
+
 }
 
 .canvas--activity {
-  padding: 10px;
-  height: 300px;
-  width: 300px;
 }
 
 table, th, td {
   border: 1px solid black;
+  padding: 3px;
+  font-size: 14px;
+}
+
+td, th {
   padding: 5px;
 }
 
 .output__table {
-  margin-right: 20px;
-  width: 400px;
+  width: 95%;
+  margin: auto;
 }
 
 
