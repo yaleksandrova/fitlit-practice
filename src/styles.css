@@ -12,7 +12,6 @@ body {
   "sidebar output";
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 10fr;
-  height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -86,7 +85,7 @@ h3 {
   font-weight: 700;
   font-size: 18px;
   padding: 10px;
-  border-top: black 2px solid;
+  border-top: #557A95 2px solid;
 }
 
 .header__h3 {
@@ -94,8 +93,10 @@ h3 {
   font-weight: 400;
 }
 
+/*OUTPUT*/
+
 output {
-  display: grid;  
+  /*display: grid;  */
   /*grid-gap: 5px;  */
   /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
   /*grid-template-rows: repeat(2, 300px);*/
@@ -104,21 +105,41 @@ output {
   padding: 10px;
 }
 
+h4 {
+  font-size: 24px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding: 10px;
+}
+
 .section--hydration {
   height: 300px;
   width: 300px;
 }
 
-h4 {
-  font-size: 24px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
+.canvas--hydration {
+  padding: 10px;
 }
 
-.canvas--hydration {
-  /*background-color: #DEB887;*/
-  padding: 10px;
-  /*padding: 5px 35px 65px 35px;*/
-/*  height: 200px;
-  width: 200px;*/
+.section--activity {
+  display: flex;
+  height: 300px;
 }
+
+.canvas--activity {
+  padding: 10px;
+  height: 300px;
+  width: 300px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.output__table {
+  margin-right: 20px;
+  width: 400px;
+}
+
+

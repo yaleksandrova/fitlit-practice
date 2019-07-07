@@ -1,29 +1,27 @@
-const UserRepository = require('../src/UserRepository');
-const userData = require('../data/users.js');
-
 class Activity {
-  constructor(activityData) {
+  constructor(activityData, userData) {
     this.activityData = activityData;
+    this.userData = userData;
   }
 
   calculateMilesWalked(date) {
     let data = this.findTargetElement(date);
-    let miles = data.element.numSteps * data.user.strideLength / 5280
+    let miles = data.element.numSteps * data.user[0].strideLength / 5280;
     let roundedMiles = miles.toFixed(2);
     return parseFloat(roundedMiles);
   }
 
-  returnMinutesOfActivity(date) {
+  returnActivityStats(date, category) {
     let targetElement = this.activityData.find(item => item.date === date);
-    return targetElement.minutesActive;
+    return targetElement[category];
   }
 
   reachStepGoal(date) {
     let data = this.findTargetElement(date);
-    if (data.element.numSteps > data.user.dailyStepGoal) {
+    if (data.element.numSteps > data.user[0].dailyStepGoal) {
       return 'Congrats! You reached your step goal!'
     } else {
-      return `Keep stepping! You missed your goal by ${data.user.dailyStepGoal - data.element.numSteps} steps!`;
+      return `Keep stepping! You missed your goal by ${data.user[0].dailyStepGoal - data.element.numSteps} steps!`;
     };
   }
 
@@ -38,7 +36,7 @@ class Activity {
   }
 
   exceedStepGoalDays() {
-    let targetUserGoal = userData.find(obj => obj.id === this.activityData[0].userID).dailyStepGoal;
+    let targetUserGoal = this.userData.find(obj => obj.id === this.activityData[0].userID).dailyStepGoal;
     let exceededGoalDays = this.activityData.filter(obj => obj.numSteps > targetUserGoal);
     return exceededGoalDays.map(obj => obj.date)
   }
@@ -48,14 +46,23 @@ class Activity {
     return Math.max(...stairsSet);
   }
 
+  returnActivityByWeek(date, category) {
+    let index = this.findIndexOfSpecificDate(date);
+    console.log(index)
+    let data = [...this.activityData];
+    let userPastWeek = data.slice(index - 7, index + 1);
+    let activityWeek = userPastWeek.map(day => day[category]);
+    console.log(activityWeek.reverse())
+    return activityWeek;
+  }
+
   findIndexOfSpecificDate(date) {
     return this.activityData.findIndex(item => item.date === date);
   }
 
   findTargetElement(date) {
     let targetElement = this.activityData.find(item => item.date === date);
-    let userRepo = new UserRepository(userData);
-    let user = userRepo.findUserData(targetElement.userID);
+    let user = this.userData.filter(element => element.id === targetElement.userID);
     return { element: targetElement, user: user };
   }
 }
