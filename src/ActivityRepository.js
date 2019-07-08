@@ -1,5 +1,3 @@
-// const Activity = require('../src/Activity');
-
 class ActivityRepository {
   constructor(data) {
     this.data = data;
@@ -8,8 +6,6 @@ class ActivityRepository {
   findUserData(id) {
     const targetUserData = this.data.filter(item => item.userID === id);
     return targetUserData;
-    // const newUser = new Activity(targetUserData);
-    // return newUser.activityData;
   }
 
   findAvgActivityByDate(date, category) {

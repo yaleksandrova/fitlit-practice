@@ -21,7 +21,7 @@ describe('SleepRepository', function() {
     expect(sleep.findUserData(1).length).to.equal(8);
   });
 
-  it('should calculate average sleep quality for each user', function () {
+  it.skip('should calculate average sleep quality for each user', function () {
     const sleep = new SleepRepository(sampleDataSleep);
     expect(sleep.avgSleepQltForEachUser()).to.be.a('object').that.deep.equals({ '1': 3,
   '2': 3,
@@ -29,7 +29,9 @@ describe('SleepRepository', function() {
   '4': 4 })
     });
 
+
   it.skip('should find users with over three sleep quality', function () {
+
     const sleep = new SleepRepository(sampleDataSleep);
     expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.equal(2)
     });
@@ -38,4 +40,5 @@ describe('SleepRepository', function() {
     const sleep = new SleepRepository(sampleDataSleep);
     expect(sleep.usersWithMostSleepHours("2019/06/18")).to.equal(1)
     });
+
 });
