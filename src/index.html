@@ -24,19 +24,30 @@
           <span class="header__li" id="header--friends"></span></h4></li>
       </ul>
       <h3>Daily Step Goal: <br >
-        <canvas id="dailyStepGoal" width="300" height="300"></canvas>
+        <canvas id="dailyStepGoal" width="300" height="250"></canvas>
+        <h5 id="stepGoalResult"></h5>
     </header>
     <output>
-      <h4>Hydration</h4>
-      <section class="section--hydration">
-        <canvas class="canvas--hydration" id="hydrationChart" width="400" height="400"></canvas>
-      </section>
-      <h4>Activity</h4>
-      <section class="section--activity" id="section--activity">
-        <canvas class="canvas--activity" id="activityChart" width="400" height="400"></canvas>
-      </section>
-      <section>3</section>
-      <section>4</section>
+      <article class="article--column1">
+        <h4>Hydration</h4>
+        <section class="section--hydration">
+          <canvas class="canvas--hydration" id="hydrationChart" width="400" height="200"></canvas>
+        </section>
+        <h4>Activity</h4>
+        <!-- <section class="section--activity--table" id="section--activity--table">
+        </section> -->
+        <section class="section--activity--charts">
+          <canvas class="canvas--steps" id="canvas--steps" width="400" height="200"></canvas>
+          <canvas class="canvas--stairs" id="canvas--stairs" width="400" height="200"></canvas>
+          <canvas class="canvas--mins-active" id="canvas--mins-active" width="400" height="200"></canvas>
+        </section>
+      </article>
+      <article class="article--column2">
+        <h4>Sleep</h4>
+        <section class="section--sleep">
+          <!-- <canvas class="canvas--sleep" id="sleepChartChart" width="400" height="400"></canvas> -->
+        </section>
+      </article>
     </output>
   </body>
   <script type="text/javascript" src="../data/activity.js"></script>

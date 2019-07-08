@@ -1,5 +1,4 @@
 const currentUserRepo = new UserRepository(userData)
-console.log(currentUserRepo)
 let userObj;
 let hydration;
 // let sleep;
@@ -7,16 +6,14 @@ let activity;
 let activityRepository = new ActivityRepository(activityData)
 // let challenge;
 
-
 function makeRandomUser() {
   let randomNumber = Math.floor(Math.random() * userData.length)
   let user = currentUserRepo.findUserData(randomNumber);
   userObj = new User({...user})
+  getActivityData(randomNumber)
   populateUserInfo(userObj);
-  console.log(userObj)
   getHydrationData(randomNumber);
   // getSleepData(randomNumber)
-  getActivityData(randomNumber)
   // getChallengeData()
   createActivityTable();
 }
@@ -27,25 +24,24 @@ function populateUserInfo(userObj) {
   $('#header__h2--name').text(userObj.returnFirstName());
   $('#header--address').text(userObj.address);
   $('#header--email').text(userObj.email);
-  $('#header--step-goal').text(userObj.dailyStepGoal);
   $('#header--friends').text(userObj.friends);
+  $('#stepGoalResult').text(activity.reachStepGoal('2019/09/22'))
+
 }
 
 function getHydrationData(randomNumber) {
   const hydrationRepo = new HydrationRepository(hydrationData);
   const userHydrationData = hydrationRepo.findUserData(randomNumber);
   hydration = new Hydration(userHydrationData);
-  console.log(hydration)
 }
 
 function getActivityData(randomNumber) {
   const userActivityData = activityRepository.findUserData(randomNumber);
   activity = new Activity(userActivityData, userData);
-  console.log(activity)
 }
 
 function createActivityTable() {
-  $('#section--activity').prepend(`
+  $('.section--activity--charts').prepend(`
     <table class="output__table">
       <tr>
         <th>Category</th>
