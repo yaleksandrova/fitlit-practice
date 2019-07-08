@@ -2,7 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const SleepRepository = require('../src/SleepRepository');
-const sampleDataSleep = require('../data/sampleDataFilteredSleep');
+const sampleDataSleep = require('../data/sampleDataSleep');
 
 describe('SleepRepository', function() {
 
@@ -29,13 +29,16 @@ describe('SleepRepository', function() {
   '4': 4 })
     });
 
+
+  it.skip('should find users with over three sleep quality', function () {
+
+    const sleep = new SleepRepository(sampleDataSleep);
+    expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.equal(2)
+    });
+
   it.skip('should find users with the most sleep hours', function () {
     const sleep = new SleepRepository(sampleDataSleep);
     expect(sleep.usersWithMostSleepHours("2019/06/18")).to.equal(1)
     });
 
-    it.skip('should find users with over three sleep quality', function () {
-      const sleep = new SleepRepository(sampleDataSleep);
-      expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.equal(2)
-      });
 });

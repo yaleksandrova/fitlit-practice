@@ -1,6 +1,3 @@
-// const Sleep = require('../src/Sleep');
-// const data = require('../data/sampleDataSleep')
-
 class SleepRepository {
   constructor (sleepData) {
     this.sleepData = sleepData;
@@ -10,28 +7,24 @@ class SleepRepository {
     const targetUserData = this.sleepData.filter(function(item){
       return item.userID === id;
     });
-    return targetUserData;
-    // const newUser = new Sleep(targetUserData)
+      return targetUserData;
   }
 
   avgSleepQltForEachUser() {
   let obj = {};
-  console.log(this.sleepData)
   this.sleepData.forEach(function(user){
     let arrayforSingleUserInfo = this.sleepData.filter(function(item){
-    // console.log(this.sleepData)
-    // console.log(arrayforSingleUserInfo)
     return item.userID === user.userID
     })
 
-    let average = (arrayforSingleUserInfo.reduce(function(currentSum, currentValue){
-      currentSum += currentValue.sleepQuality;
-      return currentSum;
-      }, 0)) / arrayforSingleUserInfo.length;
+  let average = (arrayforSingleUserInfo.reduce(function(currentSum, currentValue){
+    currentSum += currentValue.sleepQuality;
+    return currentSum;
+    }, 0)) / arrayforSingleUserInfo.length;
 
-      obj[user.userID] = Math.round(average);
-      })
-      return obj;
+    obj[user.userID] = Math.round(average);
+    })
+    return obj;
     }
 
   usersWithOverThreeSleepQuality(date){
@@ -46,7 +39,6 @@ class SleepRepository {
     let data = [...arrayOfObjects];
     let sleepPastWeek = data.splice(index - 8, index + 1);
     let arrayforSingleUserInfo = sleepPastWeek.map(function(day){
-      console.log(arrayforSingleUserInfo)
       return day.sleepQuality;
     })
 
@@ -92,7 +84,7 @@ class SleepRepository {
       if (userInfo.date === specificDate) {
         sleepObj[userInfo.userID] = userInfo.hoursSlept;
       }
-      console.log(sleep)
+      // console.log(sleep)
     })
 
     let arr = [];
