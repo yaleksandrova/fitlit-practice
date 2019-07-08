@@ -5,7 +5,6 @@ const Activity = require('../src/Activity');
 const sampleDataActivity = require('../data/sampleDataActivity');
 const sampleDataUsers = require('../data/sampleDataUsers');
 
-
 describe('Activity', () => {
 
   it('should be a function', () => {
@@ -19,13 +18,13 @@ describe('Activity', () => {
   }); 
 
   it('should calculate distance walk in miles specified by a date', () => {
-    const activity = new Activity(sampleDataActivity);
+    const activity = new Activity(sampleDataActivity, sampleDataUsers);
     expect(activity.calculateMilesWalked('2019/06/15')).to.equal(2.91);
   });
 
-  it('should return a user\'s active active minutes on a specific day', () => {
+  it('should return a user\'s active minutes on a specific day', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[10]]);
-    expect(activity.returnMinutesOfActivity('2019/06/15')).to.equal(140);
+    expect(activity.returnActivityStats('2019/06/15', 'minutesActive')).to.equal(140);
   });
 
   it('should return a user\'s average activity for a week', () => {
@@ -34,7 +33,7 @@ describe('Activity', () => {
   })
 
   it('should return check if they reach their step goal on a given day', () => {
-    const activity = new Activity(sampleDataActivity);
+    const activity = new Activity(sampleDataActivity, sampleDataUsers);
     expect(activity.reachStepGoal('2019/06/15')).to.equal('Keep stepping! You missed your goal by 6423 steps!');
   })
 
@@ -44,7 +43,7 @@ describe('Activity', () => {
   })
 
   it('should return all the days a user exceeded their step goal', () => {
-    const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]]);
+    const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]], sampleDataUsers);
     expect(activity.exceedStepGoalDays()).to.deep.equal(['2019/06/17']);
 
   })
@@ -52,5 +51,10 @@ describe('Activity', () => {
   it('should return user\'s all-time stair climbing record', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]]);
     expect(activity.findStairsMax()).to.equal(33);
+  })
+
+  it('should return activities by the week', () => {
+    const activity = new Activity(sampleDataActivity);
+    expect(activity.returnActivityByWeek('2019/06/24', 'numSteps')).to.deep.equal([8015, 6389, 10333, 2634, 14810, 11374, 3486, 12402]);
   })
 })
