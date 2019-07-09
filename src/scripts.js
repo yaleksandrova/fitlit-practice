@@ -4,7 +4,6 @@ let hydration;
 // let sleep;
 let activity;
 let activityRepository = new ActivityRepository(activityData)
-// let challenge;
 
 function makeRandomUser() {
   let randomNumber = Math.floor(Math.random() * userData.length)
@@ -14,7 +13,6 @@ function makeRandomUser() {
   populateUserInfo(userObj);
   getHydrationData(randomNumber);
   // getSleepData(randomNumber)
-  // getChallengeData()
   createActivityTable();
 }
 

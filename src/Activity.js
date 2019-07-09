@@ -56,6 +56,8 @@ class Activity {
 
   returnFriendsOfUser(fullActivityData, date) {
     let targetFriends = this.userData.find(obj => obj.id === this.activityData[0].userID).friends;
+    let userId = this.userData.find(obj => obj.id === this.activityData[0].userID).id;
+    let userAndFriends = targetFriends.unshift(userId);
     let friendObjects = this.userData.reduce((acc, curr) => {
       targetFriends.forEach(id => {
         if (id === curr.id) {
