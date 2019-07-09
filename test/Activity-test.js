@@ -57,8 +57,8 @@ describe('Activity', () => {
     expect(activity.returnActivityByWeek('2019/06/24', 'numSteps')).to.deep.equal([8015, 6389, 10333, 2634, 14810, 11374, 3486, 12402]);
   })
 
-  it('should return a friends total steps over a week', () => {
+  it.only('should return a friends total steps over a week', () => {
     const activity = new Activity(sampleDataActivity, sampleDataUsers);
-    expect(activity.returnFriendsOfUser(sampleDataActivity, "2019/06/23")).to.equal(20);
+    expect(activity.returnFriendsOfUser(sampleDataActivity, "2019/06/23").length).to.equal(2);
   })
 })

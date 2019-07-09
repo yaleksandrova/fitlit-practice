@@ -56,7 +56,6 @@ class Activity {
 
   returnFriendsOfUser(fullActivityData, date) {
     let targetFriends = this.userData.find(obj => obj.id === this.activityData[0].userID).friends;
-    // let friendObjects = this.userData.filter(obj => )
     let friendObjects = this.userData.reduce((acc, curr) => {
       targetFriends.forEach(id => {
         if (id === curr.id) {
@@ -65,14 +64,10 @@ class Activity {
       })
       return acc;
     }, []);
-    console.log(friendObjects)
-    this.filterFullData(fullActivityData, friendObjects)
+    return this.filterFullData(fullActivityData, friendObjects, date)
   }
 
-  filterFullData(fullActivityData, friendObjects, date) {
-
-// NEED TO MAKE TARGET ELEMENTS AN ARRAY OF JUST THE SPECIFIED DATES
-
+  filterFullData(fullActivityData, friendObjects, specificDate) {
     let targetElements = fullActivityData.reduce((acc, curr) => {
       friendObjects.forEach(obj => {
         if(obj.id === curr.userID) {
@@ -81,18 +76,18 @@ class Activity {
       })
       return acc;
     }, []);
-    // let index; targetElements.findIndex(item => item.date === date);
-    // console.log(targetElements)
-    // return targetElements;
-
     let friendStepObjects = friendObjects.map(friend => {
+      let index = targetElements.filter(element => element.userID === friend.id).findIndex(item => item.date === specificDate);
       return {
         id: friend.id,
         name: friend.name,
-        steps: targetElements.filter(element => element.userID === friend.id).map(obj => obj.numSteps).reduce((acc, curr) => acc += curr, 0)
+        steps: targetElements
+        .filter(element => element.userID === friend.id)
+        .slice(index - 7, index)
+        .map(obj => obj.numSteps)
+        .reduce((acc, curr) => acc += curr, 0)
       }
     })
-    console.log(friendStepObjects)
     return friendStepObjects
   }
 
@@ -110,7 +105,3 @@ class Activity {
 if (typeof module !== 'undefined') {
   module.exports = Activity;
 }
-
-
-// grab friends of user
-// 
