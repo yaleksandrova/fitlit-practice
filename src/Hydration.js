@@ -27,7 +27,7 @@ class Hydration {
 
   findIndexOfSpecificDate(specificDate) {
     return this.userData.findIndex(item => item.date === specificDate);
-  };
+  }
 }
 
 if (typeof module !== 'undefined') {
