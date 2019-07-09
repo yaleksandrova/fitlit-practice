@@ -45,7 +45,6 @@ describe('Activity', () => {
   it('should return all the days a user exceeded their step goal', () => {
     const activity = new Activity([sampleDataActivity[0], sampleDataActivity[1], sampleDataActivity[2]], sampleDataUsers);
     expect(activity.exceedStepGoalDays()).to.deep.equal(['2019/06/17']);
-
   })
 
   it('should return user\'s all-time stair climbing record', () => {
@@ -56,5 +55,10 @@ describe('Activity', () => {
   it('should return activities by the week', () => {
     const activity = new Activity(sampleDataActivity);
     expect(activity.returnActivityByWeek('2019/06/24', 'numSteps')).to.deep.equal([8015, 6389, 10333, 2634, 14810, 11374, 3486, 12402]);
+  })
+
+  it('should return a friends total steps over a week', () => {
+    const activity = new Activity(sampleDataActivity, sampleDataUsers);
+    expect(activity.returnFriendsOfUser(sampleDataActivity, "2019/06/23")).to.equal(20);
   })
 })

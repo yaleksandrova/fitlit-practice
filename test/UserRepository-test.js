@@ -24,6 +24,6 @@ describe('UserRepository', function() {
 
   it('should calculate average daily steps', function () {
     const userRepo = new UserRepository(sampleDataUsers);
-    expect(userRepo.avgStepGoal()).to.equal(7500)
+    expect(userRepo.avgStepGoal()).to.equal(5250)
   })
 });

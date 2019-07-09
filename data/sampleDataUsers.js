@@ -7,9 +7,8 @@ const userData = [
     "strideLength": 4.3,
     "dailyStepGoal": 10000,
     "friends": [
-      16,
       4,
-      8
+      8,
     ]
   },
   {
@@ -24,6 +23,34 @@ const userData = [
       18,
       24,
       19
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mae Connelly",
+    "address": "28926 Schinner Islands, Turnermouth NE 23720-3230",
+    "email": "Marcos_Pollich@hotmail.com",
+    "strideLength": 3.1,
+    "dailyStepGoal": 4000,
+    "friends": [
+      48,
+      7,
+      44,
+      8
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Laney Abshire",
+    "address": "86416 Koch Inlet, North Kaciefurt MA 80635",
+    "email": "Janice_Nitzsche2@yahoo.com",
+    "strideLength": 2.8,
+    "dailyStepGoal": 2000,
+    "friends": [
+      11,
+      41,
+      23,
+      49
     ]
   }
 ]
