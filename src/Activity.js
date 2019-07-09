@@ -48,12 +48,10 @@ class Activity {
 
   returnActivityByWeek(date, category) {
     let index = this.findIndexOfSpecificDate(date);
-    console.log(index)
     let data = [...this.activityData];
     let userPastWeek = data.slice(index - 7, index + 1);
     let activityWeek = userPastWeek.map(day => day[category]);
-    console.log(activityWeek.reverse())
-    return activityWeek;
+    return activityWeek.reverse();
   }
 
   findIndexOfSpecificDate(date) {
