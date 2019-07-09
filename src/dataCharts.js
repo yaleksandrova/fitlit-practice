@@ -1,4 +1,4 @@
-let hydrationChart = new Chart($('#hydrationChart'), {
+new Chart($('#hydrationChart'), {
   type: 'line',
   data: {
     labels: ['Today', 'Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'],
@@ -24,7 +24,7 @@ let hydrationChart = new Chart($('#hydrationChart'), {
       beginAtZero: true
 });
 
-let stepGoalChart = new Chart($('#dailyStepGoal'), {
+new Chart($('#dailyStepGoal'), {
   type: 'bar',
   data: {
     labels: ['Step Goal'],
@@ -52,7 +52,7 @@ let stepGoalChart = new Chart($('#dailyStepGoal'), {
   }
 });
 
-let weeklyStepsChart = new Chart($('#canvas--steps'), {
+new Chart($('#canvas--steps'), {
   type: 'line',
   data: {
     labels: ['Today', 'Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'],
@@ -78,7 +78,7 @@ let weeklyStepsChart = new Chart($('#canvas--steps'), {
       beginAtZero: true
 });
 
-let weeklyStairsChart = new Chart($('#canvas--stairs'), {
+new Chart($('#canvas--stairs'), {
   type: 'line',
   data: {
     labels: ['Today', 'Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'],
@@ -104,7 +104,7 @@ let weeklyStairsChart = new Chart($('#canvas--stairs'), {
       beginAtZero: true
 });
 
-let weeklyMinsActiveChart = new Chart($('#canvas--mins-active'), {
+new Chart($('#canvas--mins-active'), {
   type: 'line',
   data: {
     labels: ['Today', 'Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'],
@@ -130,35 +130,7 @@ let weeklyMinsActiveChart = new Chart($('#canvas--mins-active'), {
       beginAtZero: true
 });
 
-// let stepCountChallenge = new Chart($('#canvas--step-challenge'), {
-//   type: 'bar',
-//   data: {
-//     labels: ['Step Goal'],
-//     datasets: [
-//       {
-//         label: 'Your Step Goal',
-//         backgroundColor: 'rgba(255, 99, 132, 0.2)',
-//         data: [userObj.dailyStepGoal],
-//         borderColor: 'rgba(255, 99, 132, 1)',
-//         borderWidth: 1
-//       }, {
-//         label: "The Average",
-//         backgroundColor: 'rgba(54, 162, 235, 0.2)',
-//         data: [currentUserRepo.avgStepGoal()],
-//         borderColor: 'rgba(54, 162, 235, 1)',
-//         borderWidth: 1
-//         }
-//       ]
-//     },
-//     options: {
-//     title: {
-//       display: true,
-//       text: 'How you stack up to all users'
-//     }
-//   }
-// });
-
-let stepCountChallenge = new Chart($('#canvas--step-challenge'), {
+new Chart($('#canvas--step-challenge'), {
   type: 'bar',
   data: {
     labels: activity.returnFriendsOfUser(activityData, '2019/09/22').map(item => item.name),

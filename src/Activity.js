@@ -22,7 +22,7 @@ class Activity {
       return 'Congrats! You reached your step goal!'
     } else {
       return `Keep stepping! You missed your goal by ${data.user[0].dailyStepGoal - data.element.numSteps} steps!`;
-    };
+    }
   }
 
   avgMinsActiveInWeek(date) {
@@ -53,11 +53,10 @@ class Activity {
     return activityWeek.reverse();
   }
 
-
   returnFriendsOfUser(fullActivityData, date) {
     let targetFriends = this.userData.find(obj => obj.id === this.activityData[0].userID).friends;
     let userId = this.userData.find(obj => obj.id === this.activityData[0].userID).id;
-    let userAndFriends = targetFriends.unshift(userId);
+    targetFriends.unshift(userId);
     let friendObjects = this.userData.reduce((acc, curr) => {
       targetFriends.forEach(id => {
         if (id === curr.id) {
@@ -72,7 +71,7 @@ class Activity {
   filterFullData(fullActivityData, friendObjects, specificDate) {
     let targetElements = fullActivityData.reduce((acc, curr) => {
       friendObjects.forEach(obj => {
-        if(obj.id === curr.userID) {
+        if (obj.id === curr.userID) {
           acc.push(curr);
         }
       })

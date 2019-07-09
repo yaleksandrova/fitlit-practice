@@ -7,7 +7,6 @@ const sampleDataSleep = require('../data/sampleDataSleep');
 describe('SleepRepository', function() {
 
   it('should be a function', function() {
-    const sleep = new SleepRepository(sampleDataSleep);
     expect(SleepRepository).to.be.a('function');
   });
 

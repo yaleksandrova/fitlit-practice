@@ -6,7 +6,7 @@ class UserRepository {
   findUserData(userId) {
     const specificUser = this.data.find(user => user.id === userId);
     return specificUser;
-  };
+  }
 
   avgStepGoal() {
     const steps = [];
