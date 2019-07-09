@@ -1,82 +1,73 @@
 class Sleep {
-    constructor (sleepData) {
-      this.sleepData = sleepData;
-    }
-
-  avgNumOfHrsSleptPerDay() {
-    const sum = this.sleepData.reduce(function(currentSum, currentValue){
-      currentSum += currentValue.hoursSlept;
-      return currentSum
-    }, 0);
-    const avgHrsSlept = sum / this.sleepData.length
-    return Math.round(avgHrsSlept);
+  constructor (sleepData) {
+    this.sleepData = sleepData;
   }
 
-  avgSleepQualityPerDay() {
-    const sum = this.sleepData.reduce(function(currentSum, currentValue){
-      currentSum += currentValue.sleepQuality;
-      return currentSum
-    }, 0);
-    const avgSleepQlt = sum / this.sleepData.length
-    return Math.round(avgSleepQlt);
-  }
+avgNumOfHrsSleptPerDay() {
+  const sum = this.sleepData.reduce(function(currentSum, currentValue){
+    currentSum += currentValue.hoursSlept;
+    return currentSum
+  }, 0);
+  const avgHrsSlept = sum / this.sleepData.length
+  return Math.round(avgHrsSlept);
+}
 
-  returnHrsSleptByDate(specificDate) {
-    let targetElement = this.sleepData.find(function(item){
-      return item.date === specificDate;
-    });
-    return targetElement.hoursSlept;
-  }
+avgSleepQualityPerDay() {
+  const sum = this.sleepData.reduce(function(currentSum, currentValue){
+    currentSum += currentValue.sleepQuality;
+    return currentSum
+  }, 0);
+  const avgSleepQlt = sum / this.sleepData.length
+  return Math.round(avgSleepQlt);
+}
 
-  returnSleepQualityByDate(specificDate) {
-    let targetElement = this.sleepData.find(function(item){
-      return item.date === specificDate;
-    });
-    return targetElement.sleepQuality;
-  }
+returnHrsSleptByDate(specificDate) {
+  let targetElement = this.sleepData.find(function(item){
+    return item.date === specificDate;
+  });
+  return targetElement.hoursSlept;
+}
 
-  returnSleptByWeek(specificDate) {
-    let index = this.findIndexOfSpecificDate(specificDate);
-    let data = [...this.sleepData];
-    let sleepPastWeek = data.splice(index - 7, index + 1);
-    let hours = sleepPastWeek.map(function(day){
-      return day.hoursSlept;
-    })
-    return hours.reverse();
-  }
+returnSleepQualityByDate(specificDate) {
+  let targetElement = this.sleepData.find(function(item){
+    return item.date === specificDate;
+  });
+  return targetElement.sleepQuality;
+}
 
-  findIndexOfSpecificDate(specificDate) {
-    return this.sleepData.findIndex(function(item) {
-      return item.date === specificDate;
-    });
-  };
+returnSleptByWeek(specificDate) {
+  let index = this.findIndexOfSpecificDate(specificDate);
+  let data = [...this.sleepData];
+  let sleepPastWeek = data.splice(index - 8, index + 1);
+  let hours = sleepPastWeek.map(function(day){
+    return day.hoursSlept;
+  })
+  return hours.reverse();
+}
 
-  returnSleepQltByWeek (specificDate) {
-    let index = this.findIndexOfSpecificDate(specificDate);
-    let data = [...this.sleepData];
-    let sleepQltPastWeek = data.splice(index - 7, index + 1);
-    let hours = sleepQltPastWeek.map(function(day){
-      return day.sleepQuality;
-    })
-    return hours.reverse();
-  }
-  
-  usersWithLotsOfSleep () {
-    
-  }
+findIndexOfSpecificDate(specificDate) {
+  return this.sleepData.findIndex(function(item) {
+    return item.date === specificDate;
+  });
+};
 
+returnSleepQltByWeek (specificDate) {
+  let index = this.findIndexOfSpecificDate(specificDate);
+  let data = [...this.sleepData];
+  let sleepQltPastWeek = data.splice(index - 8, index + 1);
+  let hours = sleepQltPastWeek.map(function(day){
+    return day.sleepQuality;
+  })
+  return hours.reverse();
+}
+
+usersWithLotsOfSleep () {
+
+}
 
 }
 
 
-
-
-
-
-
-
-
-
 if (typeof module !== 'undefined') {
-  module.exports = Sleep;
+module.exports = Sleep;
 }
