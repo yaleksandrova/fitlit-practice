@@ -65,7 +65,7 @@ class Activity {
       })
       return acc;
     }, []);
-    // console.log(friendObjects)
+    console.log(friendObjects)
     this.filterFullData(fullActivityData, friendObjects)
   }
 
