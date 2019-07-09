@@ -22,9 +22,7 @@ function populateUserInfo(userObj) {
   $('#header__h2--name').text(userObj.returnFirstName());
   $('#header--address').text(userObj.address);
   $('#header--email').text(userObj.email);
-  $('#header--friends').text(userObj.friends);
   $('#stepGoalResult').text(activity.reachStepGoal('2019/09/22'))
-
 }
 
 function getHydrationData(randomNumber) {
