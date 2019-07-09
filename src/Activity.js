@@ -48,12 +48,52 @@ class Activity {
 
   returnActivityByWeek(date, category) {
     let index = this.findIndexOfSpecificDate(date);
-    console.log(index)
-    let data = [...this.activityData];
-    let userPastWeek = data.slice(index - 7, index + 1);
+    let userPastWeek = this.activityData.slice(index - 7, index + 1);
     let activityWeek = userPastWeek.map(day => day[category]);
-    console.log(activityWeek.reverse())
-    return activityWeek;
+    return activityWeek.reverse();
+  }
+
+
+  returnFriendsOfUser(fullActivityData, date) {
+    let targetFriends = this.userData.find(obj => obj.id === this.activityData[0].userID).friends;
+    // let friendObjects = this.userData.filter(obj => )
+    let friendObjects = this.userData.reduce((acc, curr) => {
+      targetFriends.forEach(id => {
+        if (id === curr.id) {
+          acc.push(curr)
+        }
+      })
+      return acc;
+    }, []);
+    // console.log(friendObjects)
+    this.filterFullData(fullActivityData, friendObjects)
+  }
+
+  filterFullData(fullActivityData, friendObjects, date) {
+
+// NEED TO MAKE TARGET ELEMENTS AN ARRAY OF JUST THE SPECIFIED DATES
+
+    let targetElements = fullActivityData.reduce((acc, curr) => {
+      friendObjects.forEach(obj => {
+        if(obj.id === curr.userID) {
+          acc.push(curr);
+        }
+      })
+      return acc;
+    }, []);
+    // let index; targetElements.findIndex(item => item.date === date);
+    // console.log(targetElements)
+    // return targetElements;
+
+    let friendStepObjects = friendObjects.map(friend => {
+      return {
+        id: friend.id,
+        name: friend.name,
+        steps: targetElements.filter(element => element.userID === friend.id).map(obj => obj.numSteps).reduce((acc, curr) => acc += curr, 0)
+      }
+    })
+    console.log(friendStepObjects)
+    return friendStepObjects
   }
 
   findIndexOfSpecificDate(date) {
@@ -70,3 +110,7 @@ class Activity {
 if (typeof module !== 'undefined') {
   module.exports = Activity;
 }
+
+
+// grab friends of user
+// 
