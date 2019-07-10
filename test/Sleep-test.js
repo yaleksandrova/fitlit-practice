@@ -50,4 +50,14 @@ describe('Sleep', function() {
     expect(sleep.returnSleepQltByWeek('2019/06/22')).to.deep.equal([3, 4.2, 1.2, 1.2, 3.1, 2.6, 3.8, 4, 1.1]);
   });
 
+  it('should return average hours slept for all time per user', function() {
+    const sleep = new Sleep([sampleDataSleep[0], sampleDataSleep[1], sampleDataSleep[2]]);
+    expect(sleep.returnSleepAllTime('hoursSlept')).to.deep.equal('5.43');
+  });
+
+  it('should return average sleep quality for all time per user', function() {
+    const sleep = new Sleep([sampleDataSleep[0], sampleDataSleep[1], sampleDataSleep[2]]);
+    expect(sleep.returnSleepAllTime('sleepQuality')).to.deep.equal('2.97');
+  });
+
 });
