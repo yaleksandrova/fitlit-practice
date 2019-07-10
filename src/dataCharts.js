@@ -151,10 +151,6 @@ new Chart($('#sleepChartDate'), {
       ]
     },
     options: {
-    title: {
-      display: true,
-      text: 'Your sleep data for today!'
-    }
   }
 });
 
@@ -212,7 +208,7 @@ new Chart($('#allTimeAvg'), {
     options: {
     title: {
       display: true,
-      text: 'Your all time sleep data:'
+      // text: 'Your all time sleep data:'
     }
   }
 });

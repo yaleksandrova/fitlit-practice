@@ -50,13 +50,11 @@ describe('Sleep', function() {
   });
 
   it('should return average hours slept for all time per user', function() {
-    const sleep = new Sleep([sampleDataSleep[0], sampleDataSleep[1], sampleDataSleep[2]]);
-    expect(sleep.returnSleepAllTime('hoursSlept')).to.deep.equal('5.43');
+    expect(sleep2.returnSleepAllTime('hoursSlept')).to.deep.equal('5.43');
   });
 
   it('should return average sleep quality for all time per user', function() {
-    const sleep = new Sleep([sampleDataSleep[0], sampleDataSleep[1], sampleDataSleep[2]]);
-    expect(sleep.returnSleepAllTime('sleepQuality')).to.deep.equal('2.97');
+    expect(sleep2.returnSleepAllTime('sleepQuality')).to.deep.equal('2.97');
   });
 
 });
