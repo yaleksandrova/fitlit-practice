@@ -1,6 +1,6 @@
 # Activity Tracker
 
-###### Activity Tracker is a fully functioning fitness application which take in activity, hydration, and sleep data from 50 users and presents the information on a stylish dashboard.
+###### Activity Tracker is a fully functioning fitness application which takes in activity, hydration, and sleep data from 50 users and presents the information on a stylish dashboard.
 
 ### Author
 
