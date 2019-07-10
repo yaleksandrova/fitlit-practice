@@ -95,7 +95,6 @@ h3 {
 
 h5 {
   color: black;
-  /*font-family: cursive;*/
   text-align: center;
   font-size: 16px;
   margin-block-start: 0px;
@@ -130,7 +129,6 @@ h4 {
 }
 
 .section--hydration {
-  /*height: 200px;*/
   width: 90%;
   margin: auto;
   padding: 5px;
@@ -143,7 +141,7 @@ h4 {
 
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid rgb(34, 139, 34, 1);
   padding: 3px;
   font-size: 14px;
 }
@@ -172,14 +170,10 @@ td, th {
 }
 
 .section--sleep {
-  /*height: 200px;*/
   width: 90%;
   margin: auto;
-
   padding: 5px;
-  /*min-height: 200px;*/
   min-width: 400px;
-  /*max-height: 250px;*/
   max-width: 550px;
 }
 
@@ -187,19 +181,6 @@ td, th {
   width: 90%;
   margin: auto;
   padding: 5px;
-  /*min-height: 200px;*/
   min-width: 400px;
-  /*max-height: 250px;*/
   max-width: 550px;
 }
-
-.canvas--hydration {
-}
-
-.section--activity--table {
-}
-
-
-.canvas--activity {
-}
-
