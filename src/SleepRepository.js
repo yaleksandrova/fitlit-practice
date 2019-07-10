@@ -20,10 +20,8 @@ class SleepRepository {
     currentSum += currentValue.sleepQuality;
     return currentSum;
     }, 0)) / arrayforSingleUserInfo.length;
-
     sleepObj[user.userID] = Math.round(average);
     })
-
     return sleepObj;
   }
 
@@ -46,6 +44,7 @@ class SleepRepository {
 
     sleepObj[user.userID] = average;
     arrayOfObjects.splice(0, index+1); 
+    console.log(arrayOfObjects)
      //start at position 0 and get rid of 9
     })
 

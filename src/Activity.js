@@ -89,7 +89,6 @@ class Activity {
         .reduce((acc, curr) => acc += curr, 0)
       }
     })
-    console.log(friendStepObjects)
     return friendStepObjects
   }
 
