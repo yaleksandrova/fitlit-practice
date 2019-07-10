@@ -89,6 +89,8 @@ class Activity {
         .reduce((acc, curr) => acc += curr, 0)
       }
     })
+    return friendStepObjects;
+  }
 
   findIndexOfSpecificDate(date) {
     return this.activityData.findIndex(item => item.date === date);
