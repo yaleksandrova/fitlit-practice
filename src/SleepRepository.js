@@ -20,10 +20,8 @@ class SleepRepository {
     currentSum += currentValue.sleepQuality;
     return currentSum;
     }, 0)) / arrayforSingleUserInfo.length;
-
     sleepObj[user.userID] = Math.round(average);
     })
-
     return sleepObj;
   }
 
@@ -45,7 +43,8 @@ class SleepRepository {
     }, 0)) / arrayforSingleUserInfo.length;
 
     sleepObj[user.userID] = average;
-    arrayOfObjects.splice(0, index + 1); 
+
+    arrayOfObjects.splice(0, index+1); 
     })
 
     const arr = Object.keys(sleepObj).filter(key => sleepObj[key] > 3)
