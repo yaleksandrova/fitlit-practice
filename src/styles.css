@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -11,7 +13,7 @@ body {
   "sidebar output"
   "sidebar output";
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 10fr;
+  /*grid-template-rows: 1fr 10fr;*/
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -24,6 +26,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 50px;
+  height: 100px;
 }
 
 h1 {
@@ -42,7 +45,7 @@ h1 {
 
 .nav__img {
   height: 50px;
-  margin-top: 45px;
+  margin-top: 10px;
 }
 
 
@@ -93,9 +96,19 @@ h3 {
   font-weight: 400;
 }
 
+.header__section--chart {
+  width: 90%;
+  margin: auto;
+  padding: 5px;
+  /*margin-bottom: 20px;*/
+  /*min-height: 200px;*/
+  min-width: 300px;
+  /*max-height: 400px;*/
+  max-width: 500px;
+}
+
 h5 {
   color: black;
-  /*font-family: cursive;*/
   text-align: center;
   font-size: 16px;
   margin-block-start: 0px;
@@ -130,11 +143,9 @@ h4 {
 }
 
 .section--hydration {
-  /*height: 200px;*/
   width: 90%;
   margin: auto;
   padding: 5px;
-  margin-bottom: 20px;
   min-height: 200px;
   min-width: 400px;
   max-height: 250px;
@@ -143,7 +154,7 @@ h4 {
 
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid rgb(34, 139, 34, 1);
   padding: 3px;
   font-size: 14px;
 }
@@ -161,25 +172,21 @@ td, th {
 }
 
 .section--activity--charts {
-  height: 200px;
+  /*height: 200px;*/
   width: 90%;
   margin: auto;
   padding: 5px;
   min-height: 200px;
   min-width: 400px;
-  max-height: 250px;
+  /*max-height: 250px;*/
   max-width: 550px;
 }
 
 .section--sleep {
-  /*height: 200px;*/
   width: 90%;
   margin: auto;
-
   padding: 5px;
-  /*min-height: 200px;*/
   min-width: 400px;
-  /*max-height: 250px;*/
   max-width: 550px;
 }
 
@@ -187,19 +194,57 @@ td, th {
   width: 90%;
   margin: auto;
   padding: 5px;
-  /*min-height: 200px;*/
   min-width: 400px;
-  /*max-height: 250px;*/
   max-width: 550px;
 }
 
-.canvas--hydration {
+@media screen and (max-width: 1150px) {
+
+  output {
+    flex-direction: column;
+  }
+
+  .article--column1 {
+    border: none;
+    width: 100%;
+  }
+
+  .article--column2 {
+    width: 100%;
+  }
 }
 
-.section--activity--table {
+@media screen and (max-width: 825px) {
+
+  h2 {
+    font-size: 24px;
+  }
+
+  #header__h2--name {
+    font-size: 24px;
+  }
 }
 
+@media screen and (max-width: 740px) {
 
-.canvas--activity {
+  body {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  h5 {
+    border: none;
+    padding-bottom: 10px;
+  }
+  
+  h3 {
+    text-align: center;
+  }
+
+  li {
+    text-align: center;
+  }
 }
-

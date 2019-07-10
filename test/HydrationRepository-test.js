@@ -10,17 +10,17 @@ beforeEach(() => {
   hydration = new HydrationRepository(sampleDataHydration);
 });
 
-describe('HydrationRepository', function() {
+describe('HydrationRepository', () => {
 
-  it('should be a function', function() {
+  it('should be a function', () => {
     expect(HydrationRepository).to.be.a('function');
   });
 
-  it('should be an instance of HydrationRepository', function() {
+  it('should be an instance of HydrationRepository', () => {
     expect(hydration).to.be.an.instanceof(HydrationRepository);
   }); 
 
-  it('should find user data given users id', function () {
+  it('should find user data given users id', () => {
     expect(hydration.findUserData(7).length).to.equal(3);
   });
 })
