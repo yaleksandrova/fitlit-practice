@@ -1,7 +1,7 @@
 const currentUserRepo = new UserRepository(userData)
 let userObj;
 let hydration;
-// let sleep;
+let sleep;
 let activity;
 let activityRepository = new ActivityRepository(activityData)
 
@@ -12,7 +12,7 @@ function makeRandomUser() {
   getActivityData(randomNumber)
   populateUserInfo(userObj);
   getHydrationData(randomNumber);
-  // getSleepData(randomNumber)
+  getSleepData(randomNumber)
   createActivityTable();
 }
 
@@ -29,6 +29,12 @@ function getHydrationData(randomNumber) {
   const hydrationRepo = new HydrationRepository(hydrationData);
   const userHydrationData = hydrationRepo.findUserData(randomNumber);
   hydration = new Hydration(userHydrationData);
+}
+
+function getSleepData(randomNumber) {
+  const sleepRepo = new SleepRepository(sleepData);
+  const userSleepData = sleepRepo.findUserData(randomNumber);
+  sleep = new Sleep(userSleepData);
 }
 
 function getActivityData(randomNumber) {
