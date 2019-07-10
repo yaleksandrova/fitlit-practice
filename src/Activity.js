@@ -38,7 +38,7 @@ class Activity {
   exceedStepGoalDays() {
     let targetUserGoal = this.userData.find(obj => obj.id === this.activityData[0].userID).dailyStepGoal;
     let exceededGoalDays = this.activityData.filter(obj => obj.numSteps > targetUserGoal);
-    return exceededGoalDays.map(obj => obj.date)
+    return exceededGoalDays.map(obj => obj.date);
   }
 
   findStairsMax() {
@@ -60,12 +60,12 @@ class Activity {
     let friendObjects = this.userData.reduce((acc, curr) => {
       targetFriends.forEach(id => {
         if (id === curr.id) {
-          acc.push(curr)
+          acc.push(curr);
         }
       })
       return acc;
     }, []);
-    return this.filterFullData(fullActivityData, friendObjects, date)
+    return this.filterFullData(fullActivityData, friendObjects, date);
   }
 
   filterFullData(fullActivityData, friendObjects, specificDate) {
@@ -89,8 +89,6 @@ class Activity {
         .reduce((acc, curr) => acc += curr, 0)
       }
     })
-    return friendStepObjects
-  }
 
   findIndexOfSpecificDate(date) {
     return this.activityData.findIndex(item => item.date === date);

@@ -14,7 +14,7 @@ class SleepRepository {
     const arrayOfObjects = this.sleepData;
     const sleepObj = {};
     arrayOfObjects.forEach(user => {
-    const arrayforSingleUserInfo = arrayOfObjects.filter(item => item.userID === user.userID)
+    const arrayforSingleUserInfo = arrayOfObjects.filter(item => item.userID === user.userID);
 
   const average = (arrayforSingleUserInfo.reduce((currentSum, currentValue) => {
     currentSum += currentValue.sleepQuality;
@@ -31,7 +31,7 @@ class SleepRepository {
 
     arrayOfObjects.forEach(user => {
     const index = arrayOfObjects.findIndex(item => item.date ===
-      specificDate)
+      specificDate);
 
     const data = [...arrayOfObjects];
     const sleepPastWeek = data.splice(index - 8, index + 1);
@@ -43,9 +43,8 @@ class SleepRepository {
     }, 0)) / arrayforSingleUserInfo.length;
 
     sleepObj[user.userID] = average;
+
     arrayOfObjects.splice(0, index+1); 
-    console.log(arrayOfObjects)
-     //start at position 0 and get rid of 9
     })
 
     const arr = Object.keys(sleepObj).filter(key => sleepObj[key] > 3)
@@ -62,14 +61,13 @@ class SleepRepository {
         sleepObj[userInfo.userID] = userInfo.hoursSlept;
       }
     })
-    const descendingArrayOfValues = Object.values(sleepObj).sort((a,b) =>
-    b - a )
+    const descendingArrayOfValues = Object.values(sleepObj).sort((a, b) =>
+    b - a );
     const result = Object.keys(sleepObj).find(key => sleepObj[key] ===
       descendingArrayOfValues[0]);
-return result;
-    }
+    return result;
+  }
 }
-
 
 if (typeof module !== 'undefined') {
   module.exports = SleepRepository;
