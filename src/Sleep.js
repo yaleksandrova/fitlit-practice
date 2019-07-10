@@ -61,10 +61,6 @@ returnSleepQltByWeek (specificDate) {
   return hours.reverse();
 }
 
-usersWithLotsOfSleep () {
-
-}
-
 }
 
 
