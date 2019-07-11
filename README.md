@@ -1,11 +1,10 @@
 # Activity Tracker
 
-###### Activity Tracker is a fully functioning fitness application which takes in and manipulates activity, hydration, and sleep data from 50 users and presents the information on a stylish dashboard.
+###### Activity Tracker is a fully functioning fitness application which takes in and manipulates activity, hydration, and sleep data from 50 users. By leveraging ES6 classes with the OPP paradigm, along with jQuery and Charts.js, the information is presented on a stylish dashboard for users to see their latest data, goals, and milestones.
 
 ### Authors
 
-###### Jacob Ogren 
-###### Yana Aleksandrova
+###### Jacob Ogren & Yana Aleksandrova
 
 ### Learning Goals
 
@@ -15,6 +14,7 @@
 - Use object and array prototype methods to perform data manipulation
 - Display information on the page while maintaining ability to test class properties and methods
 - Create a data dashboard that is easy to use and displays information in a clear way
+- Demonstrate a clear understanding of Object-Oriented Programming
 
 ### Desktop Version
 
