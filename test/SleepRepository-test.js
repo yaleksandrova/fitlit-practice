@@ -26,15 +26,14 @@ describe('SleepRepository', () => {
   });
 
   it('should calculate average sleep quality for each user', () => {
-    expect(sleep.avgSleepQltForEachUser()).to.be.a('object').that.deep.equals({ '1': 3,
-  '2': 5 })
-    });
+    expect(sleep.avgSleepQltForEachUser()).to.be.a('object').that.deep.equals({ '1': 3,'2': 5 })
+  });
 
   it('should find users with the most sleep hours for a specific date', () => {
       expect(sleep.usersWithMostSleepHours("2019/06/22")).to.equal('1')
     });
 
   it('should find users with over three sleep quality', () => {
-      expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.deep.equal(['2'])
+      expect(sleep.usersWithOverThreeSleepQuality("2019/06/22")).to.deep.equal(['2']);
   });
 });

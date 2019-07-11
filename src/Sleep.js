@@ -4,7 +4,7 @@ class Sleep {
   }
 
   avgNumOfHrsSleptPerDay() {
-    const sum = this.sleepData.reduce(function(currentSum, currentValue){
+    const sum = this.sleepData.reduce((currentSum, currentValue) => {
       currentSum += currentValue.hoursSlept;
       return currentSum
     }, 0);
@@ -13,7 +13,7 @@ class Sleep {
   }
 
   avgSleepQualityPerDay() {
-    const sum = this.sleepData.reduce(function(currentSum, currentValue){
+    const sum = this.sleepData.reduce((currentSum, currentValue) => {
       currentSum += currentValue.sleepQuality;
       return currentSum
     }, 0);
@@ -22,14 +22,14 @@ class Sleep {
   }
 
   returnHrsSleptByDate(specificDate) {
-    let targetElement = this.sleepData.find(function(item){
+    let targetElement = this.sleepData.find(item => {
       return item.date === specificDate;
     });
     return targetElement.hoursSlept;
   }
 
   returnSleepQualityByDate(specificDate) {
-    let targetElement = this.sleepData.find(function(item){
+    let targetElement = this.sleepData.find(item => {
       return item.date === specificDate;
     });
     return targetElement.sleepQuality;
@@ -39,14 +39,14 @@ class Sleep {
     let index = this.findIndexOfSpecificDate(specificDate);
     let data = [...this.sleepData];
     let sleepPastWeek = data.splice(index - 8, index + 1);
-    let hours = sleepPastWeek.map(function(day){
+    let hours = sleepPastWeek.map(day => {
       return day.hoursSlept;
     })
     return hours.reverse();
   }
 
   findIndexOfSpecificDate(specificDate) {
-    return this.sleepData.findIndex(function(item) {
+    return this.sleepData.findIndex(item => {
       return item.date === specificDate;
     });
   };
@@ -55,7 +55,7 @@ class Sleep {
     let index = this.findIndexOfSpecificDate(specificDate);
     let data = [...this.sleepData];
     let sleepQltPastWeek = data.splice(index - 8, index + 1);
-    let hours = sleepQltPastWeek.map(function(day){
+    let hours = sleepQltPastWeek.map(day => {
       return day.sleepQuality;
     })
     return hours.reverse();
@@ -70,7 +70,6 @@ class Sleep {
     return final.toFixed(2)
   }
 }
-
 
 if (typeof module !== 'undefined') {
 module.exports = Sleep;

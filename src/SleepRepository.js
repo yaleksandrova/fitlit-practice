@@ -16,13 +16,13 @@ class SleepRepository {
     arrayOfObjects.forEach(user => {
     const arrayforSingleUserInfo = arrayOfObjects.filter(item => item.userID === user.userID);
 
-  const average = (arrayforSingleUserInfo.reduce((currentSum, currentValue) => {
-    currentSum += currentValue.sleepQuality;
-    return currentSum;
-    }, 0)) / arrayforSingleUserInfo.length;
-    sleepObj[user.userID] = Math.round(average);
-    })
-    return sleepObj;
+    const average = (arrayforSingleUserInfo.reduce((currentSum, currentValue) => {
+      currentSum += currentValue.sleepQuality;
+      return currentSum;
+      }, 0)) / arrayforSingleUserInfo.length;
+      sleepObj[user.userID] = Math.round(average);
+      })
+      return sleepObj;
   }
 
   usersWithOverThreeSleepQuality(specificDate){
@@ -41,14 +41,11 @@ class SleepRepository {
       currentSum += currentValue;
         return currentSum;
     }, 0)) / arrayforSingleUserInfo.length;
-
     sleepObj[user.userID] = average;
-
     arrayOfObjects.splice(0, index+1); 
     })
 
     const arr = Object.keys(sleepObj).filter(key => sleepObj[key] > 3)
-
     return arr;
     }
 
